@@ -1,0 +1,17 @@
+org/sid/dto/RoleDTO.class
+org/sid/DemoApplication.class
+org/sid/dao/ProduitRepository.class
+org/sid/entities/Categorie.class
+org/sid/dao/UtilisateurRepository.class
+org/sid/dao/RoleServiceImpl.class
+org/sid/entities/Utilisateur.class
+org/sid/dao/ProduitRestService.class
+org/sid/dao/UtilisateurRestService.class
+org/sid/entities/Produit.class
+org/sid/dto/UtilisateurDTO.class
+org/sid/dao/RoleRestService.class
+org/sid/security/SecurityConfig.class
+org/sid/dao/UtilisateurService.class
+org/sid/dao/RoleService.class
+org/sid/entities/Role.class
+org/sid/dao/RoleRepository.class
