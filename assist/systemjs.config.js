@@ -10,6 +10,7 @@
     },
     // map tells the System loader where to look for things
     map: {
+      'angular2-flash-messages':    'npm:angular2-flash-messages',
       // our app is within the app folder
       app: 'app',
       // angular bundles
@@ -22,12 +23,14 @@
       '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
       '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
       '@angular/upgrade': 'npm:@angular/upgrade/bundles/upgrade.umd.js',
-       'lodash': 'npm:lodash/lodash.js',
-       'angular2-datatable':'npm:angular2-datatable',
-       'ng2-filter-pipe': 'node_modules/ng2-filter-pipe',
       // other libraries
       'rxjs':                      'npm:rxjs',
-      'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js'
+      'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
+      'ng2-filter-pipe': 'node_modules/ng2-filter-pipe',
+      'ng2-validation': 'npm:ng2-validation/bundles/ng2-validation.umd.js',
+      'angular2-datatable':'npm:angular2-datatable',
+      'libphonenumber-js' : 'npm:libphonenumber-js/bundle/libphonenumber-js.min.js',
+      'lodash': 'npm:lodash/lodash.js'
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {
@@ -38,12 +41,19 @@
       rxjs: {
         defaultExtension: 'js'
       },
+      'ng2-filter-pipe': { main: '/dist/index.js',defaultExtension: 'js'              },
+      "angular2-flash-messages": {
+            main: 'index.js',
+            defaultExtension: 'js'
+        },
       'angular2-datatable': {
-    main: './index.js',
-    defaultExtension: 'js'
-  },'ng2-filter-pipe': { main: 'dist/index.js'}
-   
-    }, 
-    
+        main: './index.js',
+        defaultExtension: 'js'
+      },
+      
+     
+      
+      
+    }
   });
 })(this);

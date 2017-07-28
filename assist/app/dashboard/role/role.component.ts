@@ -7,7 +7,7 @@ import { FormControl, FormGroup, FormArray, FormBuilder, Validators } from '@ang
 import { Router } from "@angular/router";
 
 @Component({
-    selector: 'home-cmp',
+  
     moduleId: module.id,
     templateUrl: 'role.component.html',
      providers: [rolesService],

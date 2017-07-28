@@ -1,10 +1,10 @@
 Manifest-Version: 1.0
-Implementation-Title: demo
+Implementation-Title: assistAuto
 Implementation-Version: 0.0.1-SNAPSHOT
-Built-By: sinda
-Implementation-Vendor-Id: com.example
+Built-By: amir
+Implementation-Vendor-Id: com.gaConnecte
 Build-Jdk: 1.8.0_131
-Implementation-URL: http://projects.spring.io/spring-boot/test/
+Implementation-URL: http://projects.spring.io/spring-boot/assistAuto/
 Created-By: Maven Integration for Eclipse
 Implementation-Vendor: Pivotal Software, Inc.
 

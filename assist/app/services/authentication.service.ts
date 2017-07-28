@@ -50,7 +50,7 @@ export class AuthenticationService {
         console.log("aaa");
         console.log(body);
         console.log("eee");
-        return this.http.post('http://localhost:8080/utilisateurs/login',body ,options)
+        return this.http.post('http://localhost:8070/utilisateurs/login',body ,options)
             .map((response: Response) => {
                 console.log('cccc');
                 // login successful if there's a jwt token in the response
@@ -120,7 +120,7 @@ export class AuthenticationService {
         this.token = null;
         localStorage.removeItem('currentUser');
 
-         return this.http.post('http://localhost:8080/utilisateurs/logout/'+id,options)
+         return this.http.post('http://localhost:8070/utilisateurs/logout/'+id,options)
       .map((res: Response) => res.json());
     }
 

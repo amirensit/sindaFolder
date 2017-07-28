@@ -15,5 +15,4 @@ export class FooterComponent implements OnInit{
         console.log('navbar.component',this.currentUser);
     }
 }
- this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
-        console.log('navbar.component',this.currentUser);
+ 

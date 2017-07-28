@@ -14,8 +14,8 @@ var role_service_1 = require('../../services/role.service');
 var role_1 = require("../../model/role");
 var router_1 = require("@angular/router");
 var utilisateur_1 = require("../../model/utilisateur");
-var HomeComponent = (function () {
-    function HomeComponent(utilisateurService, rolesService, route) {
+var UtilisateurComponent = (function () {
+    function UtilisateurComponent(utilisateurService, rolesService, route) {
         this.utilisateurService = utilisateurService;
         this.rolesService = rolesService;
         this.route = route;
@@ -42,11 +42,11 @@ var HomeComponent = (function () {
         this.pListPackForAjoutClient = [];
         this.loading = false;
     }
-    HomeComponent.prototype.ngOnInit = function () {
+    UtilisateurComponent.prototype.ngOnInit = function () {
         this.getUtilisateurs();
         this.getRoles();
     };
-    HomeComponent.prototype.chercherUtilisateurs = function () {
+    UtilisateurComponent.prototype.chercherUtilisateurs = function () {
         var _this = this;
         this.utilisateurService.serviceFindUtilisateur(this.motCle, this.pageCourante, this.size)
             .subscribe(function (response) {
@@ -54,15 +54,15 @@ var HomeComponent = (function () {
             _this.pages = new Array(response.totalPages);
         });
     };
-    HomeComponent.prototype.getUtilisateurs = function () {
+    UtilisateurComponent.prototype.getUtilisateurs = function () {
         this.pageCourante = 0;
         this.chercherUtilisateurs();
     };
-    HomeComponent.prototype.goToPage = function (p) {
+    UtilisateurComponent.prototype.goToPage = function (p) {
         this.pageCourante = p;
         this.chercherUtilisateurs();
     };
-    HomeComponent.prototype.ajoutPackToClient = function (p, isChecked) {
+    UtilisateurComponent.prototype.ajoutPackToClient = function (p, isChecked) {
         if (isChecked) {
             this.pListPackForAjoutClient.push(p);
         }
@@ -72,7 +72,7 @@ var HomeComponent = (function () {
         }
         console.log(this.pListPackForAjoutClient);
     };
-    HomeComponent.prototype.ajouterUtilisateur = function () {
+    UtilisateurComponent.prototype.ajouterUtilisateur = function () {
         var _this = this;
         this.spinning = true;
         this.utilisateurService.testIfUtilisateurExist(this.Utilisateur.email)
@@ -103,7 +103,7 @@ var HomeComponent = (function () {
         });
         console.log("cv");
     };
-    HomeComponent.prototype.getUtilisateur = function (id) {
+    UtilisateurComponent.prototype.getUtilisateur = function (id) {
         var _this = this;
         this.utilisateuur.nom = "";
         this.utilisateuur.prenom = "";
@@ -116,12 +116,12 @@ var HomeComponent = (function () {
         this.utilisateuur.connect = "";
         this.utilisateuur = this.utilisateurService.getUtilisateur(id).subscribe(function (res) { _this.utilisateuur = res, console.log(_this.utilisateuur); }, function (error) { return console.error(error); });
     };
-    HomeComponent.prototype.updateUtilisateur = function () {
+    UtilisateurComponent.prototype.updateUtilisateur = function () {
         var _this = this;
         this.utilisateurService.modifierUtilisateur(this.utilisateuur.id, this.utilisateuur.nom, this.utilisateuur.prenom, this.utilisateuur.email, this.utilisateuur.motDePasse, this.utilisateuur.numFixe, this.utilisateuur.numMobile, this.utilisateuur.status, this.utilisateuur.blocage, this.utilisateuur.connect, this.pListPackForAjoutClient)
             .subscribe(function (res) { _this.utilisateuur, console.log(_this.utilisateuur); }, function (error) { return console.error(error); });
     };
-    HomeComponent.prototype.bloquerUtilisateur = function (id) {
+    UtilisateurComponent.prototype.bloquerUtilisateur = function (id) {
         var _this = this;
         this.u = this.utilisateurService.getUtilisateur(id).subscribe(function (res) { _this.u = res; });
         if (this.u.blocage == false) {
@@ -140,7 +140,7 @@ var HomeComponent = (function () {
             console.log("hhhhhkkkkh");
         }
     };
-    HomeComponent.prototype.check = function (id) {
+    UtilisateurComponent.prototype.check = function (id) {
         var _this = this;
         this.u = this.utilisateurService.getUtilisateur(id).subscribe(function (res) { _this.u = res; }, function (err) { return console.log("ok"); });
         if (this.u.blocage == false) {
@@ -150,7 +150,7 @@ var HomeComponent = (function () {
             return false;
         }
     };
-    HomeComponent.prototype.getRoles = function () {
+    UtilisateurComponent.prototype.getRoles = function () {
         //let b:any;
         //this.execut.endTime="";
         //if(this.User.typeRole!== 1){
@@ -165,16 +165,15 @@ var HomeComponent = (function () {
         // alert("hhhhhhhhhhhhhhhhhhh");
         //}
     };
-    HomeComponent = __decorate([
+    UtilisateurComponent = __decorate([
         core_1.Component({
-            selector: 'home-cmp',
             moduleId: module.id,
             templateUrl: 'home.component.html',
             providers: [utilisateur_service_1.utilisateursService],
         }), 
         __metadata('design:paramtypes', [utilisateur_service_1.utilisateursService, role_service_1.rolesService, router_1.Router])
-    ], HomeComponent);
-    return HomeComponent;
+    ], UtilisateurComponent);
+    return UtilisateurComponent;
 }());
-exports.HomeComponent = HomeComponent;
+exports.UtilisateurComponent = UtilisateurComponent;
 //# sourceMappingURL=home.component.js.map

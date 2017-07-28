@@ -29,7 +29,7 @@ var rolesService = (function () {
         headers.append("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD");
         headers.append("contentType", "*");
         var options = new http_1.RequestOptions({ headers: headers });
-        return this.http.get("http://localhost:8080/roles", options)
+        return this.http.get("http://localhost:8070/roles", options)
             .map(function (res) { return res.json(); }, console.log("sandouda"));
     };
     rolesService.prototype.serviceFindRole = function (a, b, c) {
@@ -44,7 +44,7 @@ var rolesService = (function () {
         headers.append("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD");
         headers.append("contentType", "*");
         var options = new http_1.RequestOptions({ headers: headers });
-        return this.http.get('http://localhost:8080/roles/chercherRoles?mc='
+        return this.http.get('http://localhost:8070/roles/chercherRoles?mc='
             + a + "&page=" + b + "&size=" + c, options).map(function (res) { return res.json(); });
     };
     rolesService.prototype.getRole = function (id) {
@@ -56,7 +56,7 @@ var rolesService = (function () {
         headers.append("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD");
         headers.append("contentType", "*");
         var options = new http_1.RequestOptions({ headers: headers });
-        return this.http.get('http://localhost:8080/roles/' + id, options)
+        return this.http.get('http://localhost:8070/roles/' + id, options)
             .map(function (res) { return res.json(); });
     };
     rolesService.prototype.modifierRole = function (id, libelle, mList) {
@@ -68,7 +68,7 @@ var rolesService = (function () {
         headers.append("contentType", "*");
         var options = new http_1.RequestOptions({ headers: headers });
         var body = { "id": id, "libelle": libelle, "modules": mList };
-        return this.http.put('http://localhost:8080/roles/' + id, body, options).map(function (res) { return res.json(); });
+        return this.http.put('http://localhost:8070/roles/' + id, body, options).map(function (res) { return res.json(); });
     };
     rolesService.prototype.deleteRole = function (id) {
         console.log("okk");
@@ -80,7 +80,7 @@ var rolesService = (function () {
         headers.append("contentType", "*");
         var options = new http_1.RequestOptions({ headers: headers });
         console.log("ccgggggc");
-        return this.http.delete('http://localhost:8080/roles/' + id, options)
+        return this.http.delete('http://localhost:8070/roles/' + id, options)
             .map((function (response) { return response.json(); }), console.log("bye"));
     };
     rolesService.prototype.createRole = function (libelle, mList) {
@@ -94,12 +94,12 @@ var rolesService = (function () {
         //console.log(body);
         var options = new http_1.RequestOptions({ headers: headers });
         var body = { libelle: libelle, "modules": mList };
-        return this.http.post('http://localhost:8080/roles', body, options)
+        return this.http.post('http://localhost:8070/roles', body, options)
             .map(function (res) { return res.json(); });
     };
     rolesService.prototype.testIfRoleExist = function (libelle) {
         var body = "libelle=" + libelle;
-        return this.http.get('http://localhost:8080/roles/role?' + body)
+        return this.http.get('http://localhost:8070/roles/role?' + body)
             .map(function (res) { return res.json(); });
     };
     rolesService.prototype.getModules = function () {
@@ -115,7 +115,7 @@ var rolesService = (function () {
         headers.append("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD");
         headers.append("contentType", "*");
         var options = new http_1.RequestOptions({ headers: headers });
-        return this.http.get("http://localhost:8080/modules", options)
+        return this.http.get("http://localhost:8070/modules", options)
             .map(function (res) { return res.json(); }, console.log("sandouda"));
     };
     rolesService = __decorate([

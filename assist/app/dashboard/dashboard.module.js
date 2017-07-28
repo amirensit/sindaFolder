@@ -15,6 +15,8 @@ var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
 var common_1 = require('@angular/common');
 var ng2_filter_pipe_1 = require('ng2-filter-pipe');
+var ng2_validation_1 = require('ng2-validation');
+var angular2_flash_messages_1 = require('angular2-flash-messages');
 var angular2_datatable_1 = require("angular2-datatable");
 var DashboardModule = (function () {
     function DashboardModule() {
@@ -22,11 +24,13 @@ var DashboardModule = (function () {
     DashboardModule = __decorate([
         core_1.NgModule({
             imports: [
-                angular2_datatable_1.DataTableModule,
-                ng2_filter_pipe_1.Ng2FilterPipeModule,
                 common_1.CommonModule,
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
+                angular2_flash_messages_1.FlashMessagesModule,
+                ng2_validation_1.CustomFormsModule,
+                ng2_filter_pipe_1.Ng2FilterPipeModule,
+                angular2_datatable_1.DataTableModule,
                 forms_1.ReactiveFormsModule,
                 router_1.RouterModule.forChild(dashboard_routes_1.MODULE_ROUTES)
             ],

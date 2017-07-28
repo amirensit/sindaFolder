@@ -38,7 +38,7 @@ var AuthenticationService = (function () {
         console.log("aaa");
         console.log(body);
         console.log("eee");
-        return this.http.post('http://localhost:8080/utilisateurs/login', body, options)
+        return this.http.post('http://localhost:8070/utilisateurs/login', body, options)
             .map(function (response) {
             console.log('cccc');
             // login successful if there's a jwt token in the response
@@ -89,7 +89,7 @@ var AuthenticationService = (function () {
         // clear token remove user from local storage to log user out
         this.token = null;
         localStorage.removeItem('currentUser');
-        return this.http.post('http://localhost:8080/utilisateurs/logout/' + id, options)
+        return this.http.post('http://localhost:8070/utilisateurs/logout/' + id, options)
             .map(function (res) { return res.json(); });
     };
     AuthenticationService = __decorate([

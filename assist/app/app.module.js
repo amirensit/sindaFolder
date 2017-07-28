@@ -12,6 +12,7 @@ var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var router_1 = require('@angular/router');
 var http_1 = require('@angular/http');
+var ng2_validation_1 = require('ng2-validation');
 var app_component_1 = require('./app.component');
 var dashboard_component_1 = require('./dashboard/dashboard.component');
 var dashboard_module_1 = require('./dashboard/dashboard.module');
@@ -20,11 +21,19 @@ var footer_module_1 = require('./shared/footer/footer.module');
 var navbar_module_1 = require('./shared/navbar/navbar.module');
 var common_1 = require('@angular/common');
 var forms_1 = require("@angular/forms");
+var angular2_datatable_1 = require("angular2-datatable");
+var client_service_1 = require("./services/client.service");
+var remorqueur_service_1 = require("./services/remorqueur.service");
+var pack_service_1 = require("./services/pack.service");
+var marque_service_1 = require("./services/marque.service");
+var typeService_service_1 = require("./services/typeService.service");
+var gouvernorat_service_1 = require("./services/gouvernorat.service");
+var ville_service_1 = require("./services/ville.service");
+var ng2_filter_pipe_1 = require('ng2-filter-pipe');
+var angular2_flash_messages_1 = require('angular2-flash-messages');
 var role_service_1 = require("./services/role.service");
 var utilisateur_service_1 = require("./services/utilisateur.service");
 var authentication_service_1 = require("./services/authentication.service");
-var angular2_datatable_1 = require("angular2-datatable");
-var ng2_filter_pipe_1 = require('ng2-filter-pipe');
 var auth_guard_1 = require("./guards/auth.guard");
 var AppModule = (function () {
     function AppModule() {
@@ -32,21 +41,23 @@ var AppModule = (function () {
     AppModule = __decorate([
         core_1.NgModule({
             imports: [
-                ng2_filter_pipe_1.Ng2FilterPipeModule,
                 common_1.CommonModule,
-                angular2_datatable_1.DataTableModule,
                 http_1.HttpModule,
                 forms_1.FormsModule,
+                angular2_flash_messages_1.FlashMessagesModule,
                 forms_1.ReactiveFormsModule,
                 platform_browser_1.BrowserModule,
                 dashboard_module_1.DashboardModule,
                 sidebar_module_1.SidebarModule,
                 navbar_module_1.NavbarModule,
                 footer_module_1.FooterModule,
+                ng2_validation_1.CustomFormsModule,
+                ng2_filter_pipe_1.Ng2FilterPipeModule,
+                angular2_datatable_1.DataTableModule,
                 router_1.RouterModule.forRoot([])
             ],
             declarations: [app_component_1.AppComponent, dashboard_component_1.DashboardComponent],
-            providers: [{ provide: common_1.LocationStrategy, useClass: common_1.HashLocationStrategy }, role_service_1.rolesService, utilisateur_service_1.utilisateursService, authentication_service_1.AuthenticationService, auth_guard_1.AuthGuard],
+            providers: [{ provide: common_1.LocationStrategy, useClass: common_1.HashLocationStrategy }, authentication_service_1.AuthenticationService, utilisateur_service_1.utilisateursService, role_service_1.rolesService, auth_guard_1.AuthGuard, client_service_1.ClientService, pack_service_1.PackService, marque_service_1.MarqueService, typeService_service_1.TypeServiceService, gouvernorat_service_1.GouvernoratService, ville_service_1.VilleService, remorqueur_service_1.RemorqueurService],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

@@ -7,13 +7,13 @@ import { Router } from "@angular/router";
 import {Utilisateur} from "../../model/utilisateur";
 
 @Component({
-    selector: 'home-cmp',
+     
     moduleId: module.id,
     templateUrl: 'home.component.html',
      providers: [utilisateursService],
 })
 
-export class HomeComponent implements OnInit{
+export class UtilisateurComponent implements OnInit{
 roles ;
 roleFilter: Role = new Role();
 utilisateurFilter: Utilisateur = new Utilisateur();

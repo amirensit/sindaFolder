@@ -32,7 +32,7 @@ user;
 
       headers.append("contentType","*");
       let options = new RequestOptions( {headers: headers });
-      return this.http.get(`http://localhost:8080/roles`,options)
+      return this.http.get(`http://localhost:8070/roles`,options)
         .map((res: Response) => res.json(),console.log("sandouda"));
     }
 
@@ -58,7 +58,7 @@ user;
 
       headers.append("contentType","*");
       let options = new RequestOptions( {headers: headers });
-return this.http.get('http://localhost:8080/roles/chercherRoles?mc='
+return this.http.get('http://localhost:8070/roles/chercherRoles?mc='
                 +a+"&page="+b+"&size="+c,options).map(res=>res.json());
 }
 
@@ -77,7 +77,7 @@ return this.http.get('http://localhost:8080/roles/chercherRoles?mc='
 
     headers.append("contentType","*");
     let options = new RequestOptions( {headers: headers });
-    return this.http.get('http://localhost:8080/roles/'+id,options)
+    return this.http.get('http://localhost:8070/roles/'+id,options)
       .map((res: Response) => res.json());
 
 
@@ -100,7 +100,7 @@ return this.http.get('http://localhost:8080/roles/chercherRoles?mc='
         let options = new RequestOptions( {headers: headers });
         
         let body ={ "id":id,"libelle" : libelle, "modules" : mList};
-        return this.http.put('http://localhost:8080/roles/'+id,body,options) .map(res=>res.json());
+        return this.http.put('http://localhost:8070/roles/'+id,body,options) .map(res=>res.json());
     }
    
 
@@ -121,7 +121,7 @@ return this.http.get('http://localhost:8080/roles/chercherRoles?mc='
 
     let options = new RequestOptions( {headers: headers });
     console.log("ccgggggc");
-    return this.http.delete('http://localhost:8080/roles/'+id, options)
+    return this.http.delete('http://localhost:8070/roles/'+id, options)
       .map(((response:Response) =>response.json()),console.log("bye"));
 
     
@@ -149,7 +149,7 @@ return this.http.get('http://localhost:8080/roles/chercherRoles?mc='
         let options = new RequestOptions( {headers: headers });
          
  let body ={ libelle : libelle, "modules" : mList};
-        return this.http.post('http://localhost:8080/roles',body, options)
+        return this.http.post('http://localhost:8070/roles',body, options)
             .map((res: Response) => res.json()
 
             );
@@ -161,7 +161,7 @@ testIfRoleExist(libelle:string):Observable<boolean>{
 
         
          let body = "libelle="+libelle;
-        return this.http.get('http://localhost:8080/roles/role?'+body)
+        return this.http.get('http://localhost:8070/roles/role?'+body)
            .map((res: Response) => res.json()
                 );
 
@@ -189,7 +189,7 @@ testIfRoleExist(libelle:string):Observable<boolean>{
 
       headers.append("contentType","*");
       let options = new RequestOptions( {headers: headers });
-      return this.http.get(`http://localhost:8080/modules`,options)
+      return this.http.get(`http://localhost:8070/modules`,options)
         .map((res: Response) => res.json(),console.log("sandouda"));
     }
 }

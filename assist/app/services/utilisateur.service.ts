@@ -32,7 +32,7 @@ user;
 
       headers.append("contentType","*");
       let options = new RequestOptions( {headers: headers });
-      return this.http.get(`http://localhost:8080/utilisateurs`,options)
+      return this.http.get(`http://localhost:8070/utilisateurs`,options)
         .map((res: Response) => res.json(),console.log("sandouda"));
     }
 
@@ -58,7 +58,7 @@ user;
 
       headers.append("contentType","*");
       let options = new RequestOptions( {headers: headers });
-return this.http.get('http://localhost:8080/utilisateurs/chercherUtilisateurs?mc='
+return this.http.get('http://localhost:8070/utilisateurs/chercherUtilisateurs?mc='
                 +a+"&page="+b+"&size="+c,options).map(res=>res.json());
 }
 
@@ -76,7 +76,7 @@ getUtilisateur(id){
 
     headers.append("contentType","*");
     let options = new RequestOptions( {headers: headers });
-    return this.http.get('http://localhost:8080/utilisateurs/'+id,options)
+    return this.http.get('http://localhost:8070/utilisateurs/'+id,options)
       .map((res: Response) => res.json());
 
 
@@ -99,7 +99,7 @@ getUtilisateur(id){
 
     let options = new RequestOptions( {headers: headers });
     console.log("ccgggggc");
-    return this.http.delete('http://localhost:8080/utilisateurs/'+id, options)
+    return this.http.delete('http://localhost:8070/utilisateurs/'+id, options)
       .map(((response:Response) =>{return true}),console.log("bye"));
 
     
@@ -122,7 +122,7 @@ getUtilisateur(id){
         headers.append("contentType","*");
        
         let options = new RequestOptions( {headers: headers });
-        return this.http.put('http://localhost:8080/utilisateurs/debloquer/'+id, options)
+        return this.http.put('http://localhost:8070/utilisateurs/debloquer/'+id, options)
             .map((res: Response) => res.json(), console.log("bye"));
     }
 
@@ -143,7 +143,7 @@ bloquerUtilisateur(id:number):Observable<boolean>{
         headers.append("contentType","*");
        
         let options = new RequestOptions( {headers: headers });
-        return this.http.put('http://localhost:8080/utilisateurs/bloquer/'+id, options)
+        return this.http.put('http://localhost:8070/utilisateurs/bloquer/'+id, options)
             .map((res: Response) => res.json(), console.log("bye"));
     }
 testIfUtilisateurExist(email:string):Observable<boolean>{
@@ -151,7 +151,7 @@ testIfUtilisateurExist(email:string):Observable<boolean>{
 
         
          let body = "email="+email;
-        return this.http.get('http://localhost:8080/utilisateurs/utilisateur?'+body)
+        return this.http.get('http://localhost:8070/utilisateurs/utilisateur?'+body)
            .map((res: Response) => res.json()
                 );
 
@@ -162,7 +162,7 @@ testIfUtilisateurExist(email:string):Observable<boolean>{
 
         
          let body = "motDePasse="+motDePasse+"&email="+email;;
-        return this.http.get('http://localhost:8080/utilisateurs/utilisateur/password?'+body)
+        return this.http.get('http://localhost:8070/utilisateurs/utilisateur/password?'+body)
            .map((res: Response) => res.json()
                 );
 
@@ -191,7 +191,7 @@ testIfUtilisateurExist(email:string):Observable<boolean>{
          
  let body ={ nom : nom,prenom : prenom,email : email,motDePasse : motDePasse,numFixe : numFixe,numMobile : numMobile,status : status,
    blocage : blocage,connect : connect, roles : rList};
-        return this.http.post('http://localhost:8080/utilisateurs',body, options)
+        return this.http.post('http://localhost:8070/utilisateurs',body, options)
             .map((res: Response) => res.json()
 
             );
@@ -217,7 +217,7 @@ testIfUtilisateurExist(email:string):Observable<boolean>{
         
         let body ={ "id":id,"nom" : nom,"prenom" : prenom,"email" : email,"motDePasse" : motDePasse,"numFixe" : numFixe,
         "numMobile" : numMobile,"status" : status,"blocage" : blocage,"connect" : connect, "roles" : rList};
-        return this.http.put('http://localhost:8080/utilisateurs/'+id,body,options) .map(res=>res.json());
+        return this.http.put('http://localhost:8070/utilisateurs/'+id,body,options) .map(res=>res.json());
     }
 
 }

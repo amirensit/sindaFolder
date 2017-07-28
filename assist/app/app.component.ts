@@ -17,7 +17,6 @@ export class AppComponent implements OnInit{
     ngOnInit(){
         $.getScript('../assets/js/material-dashboard.js');
         $.getScript('../assets/js/initMenu.js');
-        
     }
     public isMaps(path){
         var titlee = this.location.prepareExternalUrl(this.location.path());
@@ -29,6 +28,4 @@ export class AppComponent implements OnInit{
             return true;
         }
     }
-
-   
 }

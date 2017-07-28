@@ -200,7 +200,6 @@ var RoleComponent = (function () {
     };
     RoleComponent = __decorate([
         core_1.Component({
-            selector: 'home-cmp',
             moduleId: module.id,
             templateUrl: 'role.component.html',
             providers: [role_service_1.rolesService],

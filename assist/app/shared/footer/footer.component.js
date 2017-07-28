@@ -28,6 +28,4 @@ var FooterComponent = (function () {
     return FooterComponent;
 }());
 exports.FooterComponent = FooterComponent;
-this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
-console.log('navbar.component', this.currentUser);
 //# sourceMappingURL=footer.component.js.map

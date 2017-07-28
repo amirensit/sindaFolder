@@ -29,7 +29,7 @@ var utilisateursService = (function () {
         headers.append("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD");
         headers.append("contentType", "*");
         var options = new http_1.RequestOptions({ headers: headers });
-        return this.http.get("http://localhost:8080/utilisateurs", options)
+        return this.http.get("http://localhost:8070/utilisateurs", options)
             .map(function (res) { return res.json(); }, console.log("sandouda"));
     };
     utilisateursService.prototype.serviceFindUtilisateur = function (a, b, c) {
@@ -44,7 +44,7 @@ var utilisateursService = (function () {
         headers.append("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD");
         headers.append("contentType", "*");
         var options = new http_1.RequestOptions({ headers: headers });
-        return this.http.get('http://localhost:8080/utilisateurs/chercherUtilisateurs?mc='
+        return this.http.get('http://localhost:8070/utilisateurs/chercherUtilisateurs?mc='
             + a + "&page=" + b + "&size=" + c, options).map(function (res) { return res.json(); });
     };
     utilisateursService.prototype.getUtilisateur = function (id) {
@@ -56,7 +56,7 @@ var utilisateursService = (function () {
         headers.append("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD");
         headers.append("contentType", "*");
         var options = new http_1.RequestOptions({ headers: headers });
-        return this.http.get('http://localhost:8080/utilisateurs/' + id, options)
+        return this.http.get('http://localhost:8070/utilisateurs/' + id, options)
             .map(function (res) { return res.json(); });
     };
     utilisateursService.prototype.deleteUtilisateur = function (id) {
@@ -69,7 +69,7 @@ var utilisateursService = (function () {
         headers.append("contentType", "*");
         var options = new http_1.RequestOptions({ headers: headers });
         console.log("ccgggggc");
-        return this.http.delete('http://localhost:8080/utilisateurs/' + id, options)
+        return this.http.delete('http://localhost:8070/utilisateurs/' + id, options)
             .map((function (response) { return true; }), console.log("bye"));
     };
     utilisateursService.prototype.debloquerUtilisateur = function (id) {
@@ -81,7 +81,7 @@ var utilisateursService = (function () {
         headers.append("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD");
         headers.append("contentType", "*");
         var options = new http_1.RequestOptions({ headers: headers });
-        return this.http.put('http://localhost:8080/utilisateurs/debloquer/' + id, options)
+        return this.http.put('http://localhost:8070/utilisateurs/debloquer/' + id, options)
             .map(function (res) { return res.json(); }, console.log("bye"));
     };
     utilisateursService.prototype.bloquerUtilisateur = function (id) {
@@ -93,18 +93,18 @@ var utilisateursService = (function () {
         headers.append("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD");
         headers.append("contentType", "*");
         var options = new http_1.RequestOptions({ headers: headers });
-        return this.http.put('http://localhost:8080/utilisateurs/bloquer/' + id, options)
+        return this.http.put('http://localhost:8070/utilisateurs/bloquer/' + id, options)
             .map(function (res) { return res.json(); }, console.log("bye"));
     };
     utilisateursService.prototype.testIfUtilisateurExist = function (email) {
         var body = "email=" + email;
-        return this.http.get('http://localhost:8080/utilisateurs/utilisateur?' + body)
+        return this.http.get('http://localhost:8070/utilisateurs/utilisateur?' + body)
             .map(function (res) { return res.json(); });
     };
     utilisateursService.prototype.testMotDePasse = function (motDePasse, email) {
         var body = "motDePasse=" + motDePasse + "&email=" + email;
         ;
-        return this.http.get('http://localhost:8080/utilisateurs/utilisateur/password?' + body)
+        return this.http.get('http://localhost:8070/utilisateurs/utilisateur/password?' + body)
             .map(function (res) { return res.json(); });
     };
     utilisateursService.prototype.createUtilisateur = function (nom, prenom, email, motDePasse, numFixe, numMobile, status, blocage, connect, rList) {
@@ -119,7 +119,7 @@ var utilisateursService = (function () {
         var options = new http_1.RequestOptions({ headers: headers });
         var body = { nom: nom, prenom: prenom, email: email, motDePasse: motDePasse, numFixe: numFixe, numMobile: numMobile, status: status,
             blocage: blocage, connect: connect, roles: rList };
-        return this.http.post('http://localhost:8080/utilisateurs', body, options)
+        return this.http.post('http://localhost:8070/utilisateurs', body, options)
             .map(function (res) { return res.json(); });
     };
     utilisateursService.prototype.modifierUtilisateur = function (id, nom, prenom, email, motDePasse, numFixe, numMobile, status, blocage, connect, rList) {
@@ -132,7 +132,7 @@ var utilisateursService = (function () {
         var options = new http_1.RequestOptions({ headers: headers });
         var body = { "id": id, "nom": nom, "prenom": prenom, "email": email, "motDePasse": motDePasse, "numFixe": numFixe,
             "numMobile": numMobile, "status": status, "blocage": blocage, "connect": connect, "roles": rList };
-        return this.http.put('http://localhost:8080/utilisateurs/' + id, body, options).map(function (res) { return res.json(); });
+        return this.http.put('http://localhost:8070/utilisateurs/' + id, body, options).map(function (res) { return res.json(); });
     };
     utilisateursService = __decorate([
         core_1.Injectable(), 
